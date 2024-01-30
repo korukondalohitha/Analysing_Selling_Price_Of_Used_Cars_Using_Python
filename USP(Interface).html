@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Car Prediction
+ </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+	background-image: url("car.avif");
+        background-repeat: no-repeat;
+	background-size: cover;
+            background-color: white; /* Changed background color to black */
+            color: white; /* Changed text color to white */
+        }
+        header {
+            background-color: black;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+        }
+        table, th, td {
+
+           
+margin: auto;
+border: none;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyzpnP64ob9jKl8fOEilJS1QVSg6JJi18Ekw&usqp=CAU" height="30px" width="50px">Used Car Prediction<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyzpnP64ob9jKl8fOEilJS1QVSg6JJi18Ekw&usqp=CAU" height="30px" width="50px"> </h1>
+    </header>
+    <div class="container">
+        <form id="carPredictionForm">
+            <table>
+                <tr>
+                    <td>
+                        <label for="price">Price:</label><br>
+                        <input type="text" id="price" name="price" required>
+                    </td>
+                    <td>
+                        <label for="brand">Brand:</label><br>
+                        <input type="text" id="brand" name="brand" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="year">Year:</label><br>
+                        <input type="text" id="year" name="year" required>
+                    </td>
+                    <td>
+                        <label for="registration">Registration:</label><br>
+                        <input type="text" id="registration" name="registration" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="body">Body:</label><br>
+                        <select id="body" name="body" required>
+                            <option value="">Select Body Type</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Hatchback">Hatchback</option>
+                            <option value="Coupe">Coupe</option>
+                            <option value="Convertible">Convertible</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="mileage">Mileage:</label><br>
+                        <input type="text" id="mileage" name="mileage" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="engine">Engine (cc):</label><br>
+                        <input type="text" id="engine" name="engine" required>
+                    </td>
+                    <td>
+                        <label for="engineType">Engine Type:</label><br>
+                        <select id="engineType" name="engineType" required>
+                            <option value="">Select Engine Type</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("carPredictionForm").addEventListener("submit", function(event){
+            event.preventDefault();
+            // You can add JavaScript logic here to handle form submission and prediction
+            // For now, let's just log the form data
+            const formData = new FormData(this);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            console.log(formObject);
+        });
+    </script>
+</body>
+</html>
